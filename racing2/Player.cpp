@@ -2,7 +2,7 @@
 
 
 double max_ax = 0.22;
-double max_ay = 0.25;
+double max_ay = 0.85;
 
 
 
@@ -22,6 +22,9 @@ Player::~Player()
 
 void Player::update(double t)
 {
+
+	/// TODO: Implement car physic like steering and lateral friction
+
 	if (Keyboard::getInstance().isPressed(SDLK_UP)) {
 		jy = -1;
 	}
@@ -56,16 +59,12 @@ void Player::update(double t)
 	}
 
 	vx = 0.9998 * vx + ax * t;
-	vy = 0.9985 * vy + ay * t;
+	vy = 0.9988 * vy + ay * t;
 
-	// dynamic friction (cause it feels good)
+	// dynamic friction (cause it feels better)
 	if (jx == 0) {
-		vx *= 0.992;
-	}
-	if (jy == 0) {
-		vy *= 0.9995;
+		vx *= 0.80;
 	}
 	x += vx * t;
 	y += vy * t;
-	std::cout << "player " << x << " " << y << "\n";
 }

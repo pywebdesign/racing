@@ -10,10 +10,6 @@ Road::Road(SDL_Renderer* renderer)
 	h = 10000;
 	w = 1200;
 	y = -h/2;
-	//x = -60;
-	//h = 10000;
-	//w = 1200;
-	//y = -h + 1200;
 	SDL_Surface* s = IMG_Load("assets\\road1.png");
 	texture = SDL_CreateTextureFromSurface(renderer, s);
 }

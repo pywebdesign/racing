@@ -15,7 +15,7 @@ Camera::~Camera()
 
 void Camera::follow(std::shared_ptr <Entity> followed, int offsetX, int offsetY)
 {
-	// TODO:  there is some method to asing before body, it may be usefull, I dont remember exactly what it does
+	// TODO:  there is some method to asign before body, it may be usefull, I dont remember exactly what it does
 	this->followed = followed;
 	this->offsetX = offsetX/2;
 	this->offsetY = offsetY/2;
@@ -27,7 +27,6 @@ void Camera::update(double t)
 {
 	x = followed->x - offsetX - h/2;
 	y = followed->y - offsetY - h/2;
-	std::cout << "camera " << x << " " << y << "\n";
 }
 
 void Camera::getRenderPosition(std::shared_ptr<Entity> entity, SDL_Rect* r)

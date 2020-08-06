@@ -5,7 +5,8 @@ Game* game = nullptr;
 int main(int argc, char* argv[])
 {
 	game = new Game();
-	game->init("GameWindow", 900, 900, false);
+	game->init("GameWindow", 900, 900);
+	game->init("GameWindow", 900, 900);
 
 	std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
 	std::chrono::steady_clock::time_point end;
